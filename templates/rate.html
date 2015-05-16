@@ -7,6 +7,8 @@
     </ion-header-bar>
   <ion-content class="has-header">
 
+      <ng-include src="'templates/cell.html'">
+      </ng-include>
     <br/>
       <div class="row">
           <div class="col text-center">
@@ -51,21 +53,27 @@
               </div>
           </div>
       </div>
-      <!--<div class="row">
-          <div class="col">
-              <p>
-                  <label for="time">Temps d'attente :</label>
-                  <span id="time"> </span>
-              </p>
-              <div>
-                  <div id="slider" style="width:400px;" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                      <a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 20%;"></a>
-                  </div>
-
-          <input class="form-control" id="single-input" value="" placeholder="Now">
-          <button type="button" id="check-minutes" clock-picker>Check the minutes</button>
-
+    <br/>
+      <div class="cell">
+          <div class="row">
+              <div class="col text-center">
+                  <span class="grey-lg">Temps d'attente</span>
               </div>
-          </div>-->
+          </div>
+          <div class="row">
+              <div class="col">
+                  <div>
+                      <div id="slider-range-container" slider-range-filter ng-if="true"></div>
+                  </div>
+              </div>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+      </div>
+
   </ion-content>
+    <ion-footer-bar align-title="center" class="bar-positive">
+        <a ng-href="#/app/addData"><h2 class="title">Merci Baby !</h2></a>
+    </ion-footer-bar>
 </ion-view>

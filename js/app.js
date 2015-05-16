@@ -48,10 +48,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 templateUrl: 'templates/profile.html'
             });
 
-    });
+    })
 
 
+.directive('sliderRangeFilter', [function() {
+    return {
+        restrict: 'A',
+        template: '<div id="searchBySliderFilter" class="filter-slider"><input ng-model="value"  type="text" id="mySlider1" slider options="options" /></div>',
+        link: function($scope, element, attrs) {
+        }
 
+    };
+}]);
 
 /*
 .directive("clockPicker", function(){
