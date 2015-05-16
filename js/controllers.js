@@ -1,3 +1,5 @@
+
+
 angular.module('starter.controllers', [])
 
 .controller('AppController', function($scope) {
@@ -6,56 +8,52 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('RateController', function($scope) {
-        angular.element(document).ready(function () {
+.controller('SearchController', function($scope) {
+    $scope.items = [
+        {
+            'id' : 1,
+            'icon' : '',
+            'name' : 'Four des remparts',
+            'queue' : 5,
+            'category' : 'Boulangerie',
+            'place' : 'Compiègne',
+            'distance' : '500m'
+        },
+        {
+            'id' : 2,
+            'icon' : '',
+            'name' : 'Sandwicherie',
+            'queue' : 15,
+            'category' : 'Boulangerie',
+            'place' : 'Compiègne',
+            'distance' : '1km'
+        }
+    ];
+})
 
-        });
-        $scope.initSlider = function () {
-            $(function () {
-                var clock = $('.clockpicker');
+.controller('RateController', function($scope, $idPlace) {
 
-                console.log("here man");
-                //clock.clockpicker('show').clockpicker('toggleView', 'minutes');
-                clock.clockpicker({
-                    donetext: 'Done',
-                    init: function() {
-                        console.log("colorpicker initiated");
-                    },
-                    beforeShow: function() {
-                        console.log("before show");
-                    },
-                    afterShow: function() {
-                        console.log("after show");
-                    },
-                    beforeHide: function() {
-                        console.log("before hide");
-                    },
-                    afterHide: function() {
-                        console.log("after hide");
-                    },
-                    beforeHourSelect: function() {
-                        console.log("before hour selected");
-                    },
-                    afterHourSelect: function() {
-                        console.log("after hour selected");
-                    },
-                    beforeDone: function() {
-                        console.log("before done");
-                    },
-                    afterDone: function() {
-                        console.log("after done");
-                    }
+})
+    .directive("clockPicker", function(){
+        return {
+            link: function(scope,element,attrs) {
+// Initialize the clockpicker with options.
+
+                var input = $('#single-input').clockpicker({
+                    placement: 'bottom',
+                    align: 'left',
+                    autoclose: true,
+                    'default': 'now'
                 });
 
-                clock.click(function(e){
+// Manually toggle to the minutes view
+                $('#check-minutes').click(function(e){
+                    console.log('prout');
                     // Have to stop propagation here
                     e.stopPropagation();
-                    console.log('click');
-                    clock.clockpicker('show')
+                    input.clockpicker('show')
                         .clockpicker('toggleView', 'minutes');
                 });
-            });
-        };
-
-        $scope.initSlider();
-});
+            }
+        }
+    });

@@ -1,0 +1,38 @@
+<ion-view view-title="Search">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">Recherche</h1>
+        <div class="buttons">
+            <a ng-href="#/app/profile"><button class="button">Profil <i class="icon ion-chevron-right"></i></button></a>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <ion-list>
+            <ion-item ng-repeat="item in items" ng-href="#/app/rate/{{item.id}}">
+                <div class="row" >
+                    <div class="col-20">
+
+                    </div>
+                    <div class="col-75">
+                        <div class="row">
+                            <div class="col">
+                                <span class="black-xl">{{item.name}}</span> <span class="grey-thin-md">Q ~ {{item.queue}}'</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="grey-md">{{item.category}}</span> <span class="grey-sm">({{item.place}})</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row row-center text-right">
+                            <span class="grey-thin-md">{{item.distance}}
+                            <span class="spacer-sm"></span>
+                            <i class="icon ion-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -26,17 +26,90 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
         $stateProvider
 
-            // HOME STATES AND NESTED VIEWS ========================================
             .state('app', {
                 url: '/app',
                 templateUrl: 'templates/index.html'
             })
 
-            // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
             .state('rate', {
-                url: '/app/rate',
+                url: '/app/rate/:idPlace',
                 templateUrl: 'templates/rate.html',
                 controller: 'RateController'
+            })
+
+            .state('search', {
+                url: '/app/search',
+                templateUrl: 'templates/search.html',
+                controller: 'SearchController'
+            })
+
+            .state('profile', {
+                url: '/app/profile',
+                templateUrl: 'templates/profile.html'
             });
 
     });
+
+
+
+
+/*
+.directive("clockPicker", function(){
+    return {
+        restrict: "A",
+        link: function(scope,element,attrs) {
+// Initialize the clockpicker with options.
+
+            console.log("here man");
+            $(element).clockpicker({
+                placement: 'top',
+                donetext: 'Done'
+            });
+            $(function () {
+                var clock = $('.clockpicker');
+
+
+                //clock.clockpicker('show').clockpicker('toggleView', 'minutes');
+                clock.clockpicker({
+                    donetext: 'Done',
+                    init: function() {
+                        console.log("colorpicker initiated");
+                    },
+                    beforeShow: function() {
+                        console.log("before show");
+                    },
+                    afterShow: function() {
+                        console.log("after show");
+                    },
+                    beforeHide: function() {
+                        console.log("before hide");
+                    },
+                    afterHide: function() {
+                        console.log("after hide");
+                    },
+                    beforeHourSelect: function() {
+                        console.log("before hour selected");
+                    },
+                    afterHourSelect: function() {
+                        console.log("after hour selected");
+                    },
+                    beforeDone: function() {
+                        console.log("before done");
+                    },
+                    afterDone: function() {
+                        console.log("after done");
+                    }
+                });
+
+                clock.click(function(e){
+                    // Have to stop propagation here
+                    e.stopPropagation();
+                    console.log('click');
+                    clock.clockpicker('show')
+                        .clockpicker('toggleView', 'minutes');
+                });
+            });
+        }
+    }
+});
+*/

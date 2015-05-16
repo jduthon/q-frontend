@@ -16,14 +16,16 @@
                   <div id="slider" style="width:400px;" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                       <a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 20%;"></a>
                   </div>-->
-          <div class="input-group clockpicker">
-              <input type="text" class="form-control" value="09:30">
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-time"></span>
-            </span>
-                  </div>
+
+          <input class="form-control" id="single-input" value="" placeholder="Now">
+          <button type="button" id="check-minutes" clock-picker>Check the minutes</button>
+
               <!--</div>
           </div>-->
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <a ng-href="#/app/search">Search</a>
   </ion-content>
 </ion-view>
