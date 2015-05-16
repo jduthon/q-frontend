@@ -5,14 +5,14 @@
             <a ng-href="#/app/profile"><button class="button">Profil <i class="icon ion-chevron-right"></i></button></a>
         </div>
     </ion-header-bar>
-    <ion-content scroll="false">
+    <ion-content>
         <ion-list>
             <ion-item ng-repeat="item in items" ng-href="#/app/rate/{{item.id}}">
-                <div class="row" >
+                <div class="row search-item">
                     <div class="col-20">
 
                     </div>
-                    <div class="col-75">
+                    <div class="col-67">
                         <div class="row">
                             <div class="col">
                                 <span class="black-xl">{{item.name}}</span> <span class="grey-thin-md">Q ~ {{item.queue}}'</span>
@@ -26,6 +26,7 @@
                     </div>
                     <div class="col">
                         <div class="row row-center text-right">
+                            <span class="spacer-sm"></span>
                             <span class="grey-thin-md">{{item.distance}}
                             <span class="spacer-sm"></span>
                             <i class="icon ion-chevron-right"></i></span>
