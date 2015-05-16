@@ -1,13 +1,58 @@
 <ion-view view-title="Rate">
-  <ion-content>
-      <div class="rate_container">
-          <h3 class="text-center"> Votre satisfaction : </h3>
-          <!--<div class="emoticons-group">
-              <img src="img/sad.png" id="sadIcon"/>
-              <img src="img/neutral.png" id="neutralIcon"/>
-              <img src="img/happy.png" id="happyIcon"/>
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <a ng-href="#/app/search"><button class="button"><i class="icon ion-chevron-left"></i> Recherche</button></a>
+        </div>
+        <h1 class="title">Feedback</h1>
+    </ion-header-bar>
+  <ion-content class="has-header">
+
+    <br/>
+      <div class="row">
+          <div class="col text-center">
+            <span class="grey-md">Comment avez-vous apprécié ce service ?</span>
           </div>
-          <div class="slider-container">
+      </div>
+      <div class="row">
+          <div class="col cell">
+              <div class="row">
+                  <div class="col text-center">
+                    <img src="img/sad_2.png" style="width: 48px; height:auto;" />
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col text-center">
+                      <input type="radio" name="reading" value="sad" />
+                  </div>
+              </div>
+          </div>
+          <div class="col cell">
+              <div class="row">
+                  <div class="col text-center">
+                      <img src="img/neutral_2.png" style="width: 48px; height:auto;" />
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col text-center">
+                      <input type="radio" name="reading" value="neutral" />
+                  </div>
+              </div>
+          </div>
+          <div class="col cell">
+              <div class="row">
+                  <div class="col text-center">
+                      <img src="img/happy_2.png" id="sadIcon" style="width: 48px; height:auto;" />
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col text-center">
+                      <input type="radio" name="reading" value="happy" />
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--<div class="row">
+          <div class="col">
               <p>
                   <label for="time">Temps d'attente :</label>
                   <span id="time"> </span>
@@ -15,17 +60,12 @@
               <div>
                   <div id="slider" style="width:400px;" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                       <a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 20%;"></a>
-                  </div>-->
+                  </div>
 
           <input class="form-control" id="single-input" value="" placeholder="Now">
           <button type="button" id="check-minutes" clock-picker>Check the minutes</button>
 
-              <!--</div>
+              </div>
           </div>-->
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <a ng-href="#/app/search">Search</a>
   </ion-content>
 </ion-view>

@@ -1,5 +1,4 @@
 body{
-    background-color: #FAFAFA;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 0.9em;
     line-height: 0.6em;
@@ -8,11 +7,41 @@ ion-list{
     right:0;
 }
 ion-item{
-    background-color: white;
     right:0;
+    margin: 8px !important;
+    border-color: transparent;
+    box-shadow: 0px 1px 0px 0 #a3a3a3 !important;
 }
+.cell{
+    background-color: white !important;
+    margin: 8px !important;
+    border-color: transparent;
+    box-shadow: 0px 1px 0px 0 #a3a3a3 !important;
+}
+ion-header-bar{
+    background-color: #FAFAFA !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: 0px 1px 0px 0 #a3a3a3 !important;
+}
+ion-content{
+    background-color: #FAFAFA !important;
+}
+.search-item{
+    background-color: white !important;
+}
+.bar > h1 {
+    color: black !important;
+}
+
 .item-content{
-    padding:8px !important;
+    padding:0px !important;
+}
+.margin-sm{
+    margin: 8px;
+}
+.text-center{
+    text-align: center;
 }
 
 .black-xl{
