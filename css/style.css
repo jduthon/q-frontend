@@ -77,3 +77,71 @@ ion-content{
 .spacer-sm{
     width: 8px;
 }
+
+.float{
+    position:absolute;
+}
+
+.blurred-container {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+    opacity: 0.4;
+}
+
+.col.no-background, .row.no-background{
+    background-color: rgba(255,255,255,0.65) !important;
+    color: black;
+}
+
+.no-background *{
+    background-color: rgba(255,255,255,0.5);
+}
+.item.item-trns {
+    float:top;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    width:100%;
+}
+
+.item.item-trns *{
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+.fake-list{
+    width:100%;
+}
+
+.inline-list{
+    display:inline;
+}
+
+.float-left{
+    float:left;
+}
+
+.float-right{
+    float:right;
+}
+
+.menu-map *{
+    background-color:transparent !important;
+    font-size:100%;
+}
+
+.menu-map{
+    background-color:transparent !important;
+    padding:10px;
+    width:100%;
+    z-index:10;
+}
+
+.menu-map .middle{
+    margin-left:31%;
+    margin-right:20.5%;
+}
