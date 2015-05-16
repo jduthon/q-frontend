@@ -51,7 +51,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'leaflet-directive'])
 
             .state('profile', {
                 url: '/app/profile',
-                templateUrl: 'templates/profile.html'
+                templateUrl: 'templates/profile.html',
+                controller: 'ProfileController'
             });
 
     })

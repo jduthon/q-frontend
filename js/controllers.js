@@ -1,33 +1,54 @@
 angular.module('starter.controllers', ['angularAwesomeSlider'])
 
-.controller('AppController', function($scope) {
+    .controller('AppController', function($scope) {
 
 
 
-})
+    })
 
-.controller('SearchController', function($scope) {
-    $scope.items = [
-        {
-            'id' : 1,
-            'icon' : '',
-            'name' : 'Four des remparts',
-            'queue' : 5,
-            'category' : 'Boulangerie',
-            'place' : 'Compiègne',
-            'distance' : '500m'
-        },
-        {
-            'id' : 2,
-            'icon' : '',
-            'name' : 'Sandwicherie',
-            'queue' : 15,
-            'category' : 'Boulangerie',
-            'place' : 'Compiègne',
-            'distance' : '1km'
-        }
-    ];
-})
+    .controller('SearchController', function($scope) {
+        $scope.items = [
+            {
+                'id' : 1,
+                'icon' : '',
+                'name' : 'Four des remparts',
+                'queue' : 5,
+                'category' : 'Boulangerie',
+                'place' : 'Compiègne',
+                'distance' : '500m'
+            },
+            {
+                'id' : 2,
+                'icon' : '',
+                'name' : 'Sandwicherie',
+                'queue' : 15,
+                'category' : 'Boulangerie',
+                'place' : 'Compiègne',
+                'distance' : '1km'
+            }
+        ];
+    })
+
+    .controller('ProfileController', function($scope) {
+        $scope.achievements = [
+            {
+                'credits' : 10,
+                'name' : 'First try !',
+                'desc' : 'Envoyez votre premier feedback'
+            },
+            {
+                'credits' : 15,
+                'name' : 'Patient',
+                'desc' : 'Patientez plus de 30\' dans une file (#FoutLaRage)'
+            },
+            {
+                'credits' : 30,
+                'name' : 'Arpenteur',
+                'desc' : 'Envoyez plus de 30 feedbacks'
+            },
+        ];
+    })
+
 
     .controller('mapViewController', function($scope){
         angular.extend($scope, {
@@ -295,4 +316,4 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             };
             //$scope.value3 = "10;50";
         };
-})
+    })
