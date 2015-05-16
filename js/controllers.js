@@ -39,7 +39,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             {
                 'credits' : 15,
                 'name' : 'Patient',
-                'desc' : 'Patientez plus de 30\' dans une file (#FoutLaRage)'
+                'desc' : 'Patientez plus de 30min dans une file'
             },
             {
                 'credits' : 30,
