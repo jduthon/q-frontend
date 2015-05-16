@@ -1,5 +1,4 @@
 body{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 0.9em;
     line-height: 0.6em;
 }
@@ -11,6 +10,7 @@ ion-item{
     margin: 8px !important;
     border-color: transparent;
     box-shadow: 0px 1px 0px 0 #a3a3a3 !important;
+    padding: 8px !important;
 }
 .cell{
     background-color: white !important;
@@ -27,7 +27,7 @@ ion-header-bar{
 ion-content{
     background-color: #FAFAFA !important;
 }
-.search-item{
+.cell-item{
     background-color: white !important;
 }
 .bar > h1 {
@@ -43,40 +43,74 @@ ion-content{
 .text-center{
     text-align: center;
 }
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
 
 .black-xl{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 1.0em;
     color: black;
 }
 .grey-lg{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 0.9em;
     color: #7A7A7A;
 }
 .grey-md{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 0.8em;
     color: #7A7A7A;
 }
 .grey-thin-md{
-    font-family: "HelveticaNeue-Thin", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 0.8em;
     color: #7A7A7A;
 }
 .grey-sm{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 0.7em;
     color: #7A7A7A;
 }
+.white-medium-lg{
+    font-size: 0.9em;
+    color: white;
+}
+.white-thin-lg{
+    font-size: 0.9em;
+    color: white;
+}
+body,
+.black-xl,
+.grey-lg,
+.grey-md,
+.grey-sm{
+    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !important;
+    font-weight:300 !important;
+    font-stretch:normal;
+}
 
+.white-medium-lg{
+    font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !important;
+    font-weight:500 !important;
+    font-stretch:normal;
+}
 
+.grey-thin-md,
+.white-thin-lg
+{
+    font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif !important;
+    font-weight:200 !important;
+    font-stretch:normal;
+}
 
+.profile-container{
+    background-color: black;
+}
 
 
 .spacer-sm{
     width: 8px;
 }
+
 
 .float{
     position:absolute;
@@ -141,7 +175,34 @@ ion-content{
     z-index:10;
 }
 
-.menu-map .middle{
-    margin-left:31%;
-    margin-right:20.5%;
+.menu-map .middle {
+    margin-left: 31%;
+    margin-right: 20.5%;
+}
+
+.circular {
+
+}
+
+.circular img {
+
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.circle-blue{
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    border:1px solid #037aff;
+
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }

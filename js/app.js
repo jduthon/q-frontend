@@ -51,13 +51,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'leaflet-directive'])
 
             .state('profile', {
                 url: '/app/profile',
-                templateUrl: 'templates/profile.html'
+                templateUrl: 'templates/profile.html',
+                controller: 'ProfileController'
             });
 
-    });
+    })
 
 
+.directive('sliderRangeFilter', [function() {
+    return {
+        restrict: 'A',
+        template: '<div id="searchBySliderFilter" class="filter-slider"><input ng-model="value"  type="text" id="mySlider1" slider options="options" /></div>',
+        link: function($scope, element, attrs) {
+        }
 
+    };
+}]);
 
 /*
 .directive("clockPicker", function(){
