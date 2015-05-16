@@ -1,0 +1,14 @@
+<ion-view view-title="mapView">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <a ng-href="#/app/profile"><button class="button"> <i class="icon ion-chevron-left"></i></button></a>
+        </div>
+        <h1 class="title"> {{commerce.name}}</h1>
+        <div class="buttons">
+            <a ng-href="#/app/profile"><button class="button"> <i class="icon ion-chevron-right"></i></button></a>
+        </div>
+    </ion-header-bar>
+    <ion-content data-tap-disabled="true">
+        <leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map"></leaflet>
+    </ion-content>
+</ion-view>
