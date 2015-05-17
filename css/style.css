@@ -33,6 +33,9 @@ ion-content{
 .bar > h1 {
     color: black !important;
 }
+hr{
+    border: 1px solid #a3a3a3 !important;
+}
 
 .item-content{
     padding:0px !important;

@@ -8,6 +8,7 @@
     "category" : "Boulangerie",
     "place" : "Compiègne",
     "distance" : "1.5km",
+    "credits" : 10,
     "hr" : true
   },
   {
@@ -19,6 +20,7 @@
     "category" : "Restauration rapide",
     "place" : "Compiègne",
     "distance" : "2km",
+    "credits" : 5,
     "hr" : false
   },
   {
@@ -30,6 +32,7 @@
     "category" : "Supermarché",
     "place" : "Compiègne",
     "distance" : "500m",
+    "credits" : 1,
     "hr" : false
   },
   {
@@ -41,6 +44,7 @@
     "category" : "Supermarché",
     "place" : "Compiègne",
     "distance" : "10km",
+    "credits" : 1,
     "hr" : false
   }
 ]
