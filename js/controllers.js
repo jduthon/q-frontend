@@ -50,6 +50,9 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
         $("#blurred").height(24);
         console.log($("#blurred").height());
 
+        $scope.mapHeight = $(document).height() - $("#navbar-map").height() - 10;
+        console.log($scope.mapHeight);
+
         var today = new Date();
         var monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
             "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
@@ -113,7 +116,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
                 'distance' : "6.5Km"
             };
 
-            console.log($(".circular-day"));
+
 
             var cart_icon = {
                     iconUrl: 'img/cart.png',
