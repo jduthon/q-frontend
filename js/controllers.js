@@ -37,7 +37,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
         ];
     })
 
-    .controller('mapViewController', function($scope){
+    .controller('mapViewController', function($scope, $http, $stateParams){
         angular.extend($scope, {
             defaults: {
                 scrollWheelZoom: false
@@ -102,7 +102,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
          */
         $scope.$on("$stateChangeSuccess", function() {
             console.log("TAMER");
-            $scope.commerce = {
+            /*$scope.commerce = {
                 'name': 'MachinTruc',
                 'longitude': 2.815848,
                 'latitude': 49.412262,
@@ -111,7 +111,19 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
                 'type' : "Supermarché",
                 'attente' : 10,
                 'distance' : "6.5Km"
-            };
+            };*/
+
+            $http.get('data/data.json')
+                .success(function(data) {
+                    for(var it in data){
+                        if(data[it].idPlace == $stateParams.idPlace){
+                            $scope.commerce = data[it];
+                        }
+                    }
+                })
+                .error(function() {
+                    console.log('could not find someFile.json');
+                });
 
             console.log($(".circular-day"));
 

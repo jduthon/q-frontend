@@ -44,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'leaflet-directive'])
             })
 
             .state('mapView', {
-                url: '/app/mapView',
+                url: '/app/mapView/:idPlace',
                 templateUrl: 'templates/mapView.html',
                 controller: 'mapViewController'
             })
