@@ -13,30 +13,31 @@
 
         <div class="float menu-map text-center" id="menuMap">
 
-            <div class="float-right">
+            <div class="float-right grey-thin-md">
                 {{commerce.distancePlace}}
             </div>
-            <div class="float-left">
-                {{commerce.adresse}} , <br/> <br/>
-                {{commerce.ville}}
-            </div>
-            <div class="float-left middle">
+            <div class="float-left middle black-thin-md">
                 <b>{{ commerce.type}} </b> <br/> <br/>
-                Q {{ commerce.attente}} '
+                Q = {{ commerce.attente}} '
             </div>
 
         </div>
 
         <div class="float-bottom menu-map text-center">
+            <div class="grey-thin-md">
+                {{ commerce.adresse }} , {{ commerce.ville}}
+            </div>
+            <br/>
             <div>
                 {{ actualMonth }}
             </div>
             <br/>
-            <div class="vertical-list">
-                            <button class="circular-day text-center" ng-repeat="day in days" ng-class="{active: $first}" id="daySelect{{day.number}}" ng-click="onDaySelectClick(day.number)">
-                                    {{ day.name | limitTo:1 }} <br/>
-                                    {{ day.number }}
-                        </button>
+            <div class="vertical-list text-center">
+                <button class="circular-day" ng-repeat="day in days" ng-class="{active: $first}" id="daySelect{{day.number}}" ng-click="onDaySelectClick(day.number)">
+                       <span class="text-center"> &nbsp;{{ day.name | limitTo:1 }} </span> <br/>
+                        <span class="text-center"> {{ day.number }} </span>
+                </button>
+
         </div>
             <div>
                 <canvas id="myChart"></canvas>

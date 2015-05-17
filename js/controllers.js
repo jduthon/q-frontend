@@ -54,11 +54,8 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
         console.log($("#blurred").height());
 
         $scope.mapHeight = $(document).height() - $("#navbar-map").height() - 10;
-        console.log($scope.mapHeight);
         $scope.graphHeight = ($scope.mapHeight*30)/100;
-        console.log($scope.graphHeight);
         $scope.graphWidth = ($(document).width()*70)/100;
-        console.log($scope.graphWidth);
 
         var today = new Date();
         var monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
