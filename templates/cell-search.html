@@ -1,0 +1,42 @@
+<div ng-if="item.hr" style="position: absolute; margin-left:4px; margin-top:4px; z-index:100;">
+    <img class="star" src="img/star.png" />
+</div>
+<ion-item ng-href="#/app/rate/{{item.idPlace}}">
+    <div class="row cell-item">
+        <div class="col-10">
+            <div class="row-center">
+                <div class="col text-center">
+                    <img class="search-icon" src="img/{{item.iconPlace}}.png" />
+                </div>
+            </div>
+            <div class="row-center">
+                <div class="col text-center grey-md">
+                    +{{item.creditsPlace}}
+                </div>
+            </div>
+        </div>
+        <div class="col-67">
+            <div class="row">
+                <div class="col">
+                    <span class="black-xl">{{item.placeName}}</span> <span class="grey-thin-md">Q ~ {{item.queuePlace}}min</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <span class="grey-md">{{item.category}}</span> <span class="grey-sm">({{item.place}})</span>
+                </div>
+            </div>
+        </div>
+        <div class="col" ng-if="item.distancePlace">
+            <div class="row row-center text-right">
+                <span class="spacer-sm"></span>
+                <span class="grey-thin-md">{{item.distancePlace}}
+                <span class="spacer-sm"></span>
+                <i class="icon ion-chevron-right"></i></span>
+            </div>
+        </div>
+    </div>
+</ion-item>
+<div ng-if="item.hr">
+<hr/>
+</div>
