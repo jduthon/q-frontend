@@ -185,13 +185,17 @@ body,
     float:right;
 }
 
+.float-bottom{
+    position:absolute; bottom:0;
+}
+
 .menu-map *{
     background-color:transparent !important;
     font-size:100%;
 }
 
 .menu-map{
-    background-color:transparent !important;
+    background-color:rgba(240,240,240,0.8);
     padding:10px;
     width:100%;
     z-index:10;
@@ -202,8 +206,25 @@ body,
     margin-right: 20.5%;
 }
 
-.circular {
+.circular-day{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-style:solid;
+    border-color:rgba(60,60,60,0.8  );
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    color:#525252;
+    background-color: #EEECE7 !important;
+    margin:5px;
+}
 
+.circular-day.active{
+    background-color: #037AFF !important;
+    color:white;
 }
 
 .circular img {
