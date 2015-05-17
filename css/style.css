@@ -35,6 +35,7 @@ ion-content{
 }
 hr{
     border: 1px solid #a3a3a3 !important;
+    margin: 8px !important;
 }
 
 .item-content{
@@ -262,4 +263,9 @@ body,
 }
 .red{
     background-color: #ecb09b !important;
+}
+
+.star{
+    width:10px;
+    height:10px;
 }

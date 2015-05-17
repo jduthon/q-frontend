@@ -1,50 +1,50 @@
 [
   {
-    "id" : 1,
-    "icon" : "bread",
-    "name" : "Four du coin",
-    "queue" : 5,
-    "class" : "green",
+    "idPlace" : 1,
+    "iconPlace" : "bread",
+    "placeName" : "Four du coin",
+    "queuePlace" : 5,
     "category" : "Boulangerie",
     "place" : "Compiègne",
-    "distance" : "1.5km",
-    "credits" : 10,
-    "hr" : true
+    "distancePlace" : "1.5km",
+    "creditsPlace" : 10,
+    "hr" : true,
+    "route" : "rate/1"
   },
   {
-    "id" : 2,
-    "icon" : "resto",
-    "name" : "Bistrote",
-    "queue" : 10,
-    "class" : "green",
+    "idPlace" : 2,
+    "iconPlace" : "resto",
+    "placeName" : "Bistrote",
+    "queuePlace" : 10,
     "category" : "Restauration rapide",
     "place" : "Compiègne",
-    "distance" : "2km",
-    "credits" : 5,
-    "hr" : false
+    "distancePlace" : "2km",
+    "creditsPlace" : 5,
+    "hr" : false,
+    "route" : "mapView"
   },
   {
-    "id" : 3,
-    "icon" : "cart",
-    "name" : "Machin market",
-    "queue" : 15,
-    "class" : "orange",
+    "idPlace" : 3,
+    "iconPlace" : "cart",
+    "placeName" : "Machin market",
+    "queuePlace" : 15,
     "category" : "Supermarché",
     "place" : "Compiègne",
-    "distance" : "500m",
-    "credits" : 1,
-    "hr" : false
+    "distancePlace" : "500m",
+    "creditsPlace" : 1,
+    "hr" : false,
+    "route" : "mapView"
   },
   {
-    "id" : 4,
-    "icon" : "cart",
-    "name" : "Carouf'",
-    "queue" : 30,
-    "class" : "red",
+    "idPlace" : 4,
+    "iconPlace" : "cart",
+    "placeName" : "Carouf'",
+    "queuePlace" : 30,
     "category" : "Supermarché",
     "place" : "Compiègne",
-    "distance" : "10km",
-    "credits" : 1,
-    "hr" : false
+    "distancePlace" : "10km",
+    "creditsPlace" : 1,
+    "hr" : false,
+    "route" : "mapView"
   }
 ]

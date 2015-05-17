@@ -179,8 +179,8 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
         $http.get('data/data.json')
             .success(function(data) {
                 for(var it in data){
-                    if(data[it].id == $stateParams.idPlace){
-                        delete data[it].distance;
+                    if(data[it].idPlace == $stateParams.idPlace){
+                        delete data[it].distancePlace;
                         $scope.item = data[it];
                     }
                 }
