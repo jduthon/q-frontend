@@ -208,8 +208,9 @@ body,
 }
 
 .circular-day{
-    width: 45px;
-    height: 45px;
+    width: 10%;
+    max-width:45px;
+    max-height: 45px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
