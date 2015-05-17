@@ -2,12 +2,16 @@
 <ion-item ng-href="#/app/rate/{{item.id}}">
     <div class="row cell-item">
         <div class="col-10">
-
+            <div class="row-center">
+                <div class="col text-center">
+                    <img class="search-icon" src="img/{{item.icon}}.png" />
+                </div>
+            </div>
         </div>
         <div class="col-67">
             <div class="row">
                 <div class="col">
-                    <span class="black-xl">{{item.name}}</span> <span class="grey-thin-md">Q ~ {{item.queue}}'</span>
+                    <span class="black-xl">{{item.name}}</span> <span class="grey-thin-md">Q ~ {{item.queue}}min</span>
                 </div>
             </div>
             <div class="row">
@@ -26,3 +30,6 @@
         </div>
     </div>
 </ion-item>
+<div ng-if="item.hr">
+<hr/>
+</div>

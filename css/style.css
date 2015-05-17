@@ -9,14 +9,14 @@ ion-item{
     right:0;
     margin: 8px !important;
     border-color: transparent;
-    box-shadow: 0px 1px 0px 0 #a3a3a3 !important;
-    padding: 8px !important;
+    box-shadow: 0px 1px 0px 0 #eaeaea !important;
+    padding: 0px !important;
 }
 .cell{
     background-color: white !important;
     margin: 8px !important;
     border-color: transparent;
-    box-shadow: 0px 1px 0px 0 #a3a3a3 !important;
+    box-shadow: 0px 1px 0px 0 #eaeaea !important;
 }
 ion-header-bar{
     background-color: #FAFAFA !important;
@@ -82,15 +82,17 @@ body,
 .black-xl,
 .grey-lg,
 .grey-md,
-.grey-sm{
+.grey-sm
+{
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !important;
-    font-weight:300 !important;
+    font-weight:normal !important;
     font-stretch:normal;
 }
 
-.white-medium-lg{
+.white-medium-lg
+{
     font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !important;
-    font-weight:500 !important;
+    font-weight:bold !important;
     font-stretch:normal;
 }
 
@@ -98,12 +100,29 @@ body,
 .white-thin-lg
 {
     font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif !important;
-    font-weight:200 !important;
+    font-weight:lighter !important;
     font-stretch:normal;
 }
 
-.profile-container{
-    background-color: black;
+.profile-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; // Hide overflow to contain the background
+}
+.profile-container__background {
+    position: absolute;
+    top: -50%;
+    left: -5%;
+    width: 110%;
+    // Where the magic happens
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+.profile-container__profile {
+    position: relative;
 }
 
 
@@ -206,7 +225,6 @@ body,
 }
 
 .circular img {
-
     width: 92px;
     height: 92px;
     border-radius: 50%;
@@ -228,7 +246,17 @@ body,
     vertical-align: middle;
 }
 
-.vertical-list{
-    display:inline;
-    margin:20px;
+.search-icon {
+    width:20px;
+    height:20px;
+}
+
+.green{
+    background-color: #add99e !important;
+}
+.orange{
+    background-color: #ead792 !important;
+}
+.red{
+    background-color: #ecb09b !important;
 }

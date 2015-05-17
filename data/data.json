@@ -1,0 +1,46 @@
+[
+  {
+    "id" : 1,
+    "icon" : "bread",
+    "name" : "Four du coin",
+    "queue" : 5,
+    "class" : "green",
+    "category" : "Boulangerie",
+    "place" : "Compiègne",
+    "distance" : "1.5km",
+    "hr" : true
+  },
+  {
+    "id" : 2,
+    "icon" : "resto",
+    "name" : "Bistrote",
+    "queue" : 10,
+    "class" : "green",
+    "category" : "Restauration rapide",
+    "place" : "Compiègne",
+    "distance" : "2km",
+    "hr" : false
+  },
+  {
+    "id" : 3,
+    "icon" : "cart",
+    "name" : "Machin market",
+    "queue" : 15,
+    "class" : "orange",
+    "category" : "Supermarché",
+    "place" : "Compiègne",
+    "distance" : "500m",
+    "hr" : false
+  },
+  {
+    "id" : 4,
+    "icon" : "cart",
+    "name" : "Carouf'",
+    "queue" : 30,
+    "class" : "red",
+    "category" : "Supermarché",
+    "place" : "Compiègne",
+    "distance" : "10km",
+    "hr" : false
+  }
+]

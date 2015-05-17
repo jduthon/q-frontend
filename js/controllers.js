@@ -6,27 +6,15 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
 
     })
 
-    .controller('SearchController', function($scope) {
-        $scope.items = [
-            {
-                'id' : 1,
-                'icon' : '',
-                'name' : 'Four des remparts',
-                'queue' : 5,
-                'category' : 'Boulangerie',
-                'place' : 'Compiègne',
-                'distance' : '500m'
-            },
-            {
-                'id' : 2,
-                'icon' : '',
-                'name' : 'Sandwicherie',
-                'queue' : 15,
-                'category' : 'Boulangerie',
-                'place' : 'Compiègne',
-                'distance' : '1km'
-            }
-        ];
+    .controller('SearchController', function($scope, $http) {
+
+        $http.get('data/data.json')
+            .success(function(data) {
+                $scope.items = data;
+            })
+            .error(function() {
+                console.log('could not find someFile.json');
+            });
     })
 
     .controller('ProfileController', function($scope) {
@@ -39,7 +27,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             {
                 'credits' : 15,
                 'name' : 'Patient',
-                'desc' : 'Patientez plus de 30\' dans une file (#FoutLaRage)'
+                'desc' : 'Patientez plus de 30min dans une file'
             },
             {
                 'credits' : 30,
@@ -48,7 +36,6 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             },
         ];
     })
-
 
     .controller('mapViewController', function($scope){
         angular.extend($scope, {
