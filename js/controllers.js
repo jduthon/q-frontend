@@ -63,6 +63,53 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
         $("#blurred").height(24);
         console.log($("#blurred").height());
 
+        var today = new Date();
+        var monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+            "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+        ];
+        var dayNames = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+        $scope.actualMonth = monthNames[today.getMonth()];
+
+        $scope.days=[];
+
+        var selected = today.getDate();
+        for(var i=0;i<7;++i){
+            $scope.days[i]= {
+                "name": dayNames[today.getDay()],
+                "number": today.getDate()
+            }
+            today.setDate(today.getDate()+1);
+        }
+
+        $scope.onDaySelectClick = function(id){
+            console.log(id);
+            $("#daySelect" + selected).removeClass("active");
+            selected = id;
+            $("#daySelect" + id).addClass("active")
+        }
+
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(255,226,161,1)');
+        gradient.addColorStop(1, 'rgba(255,255,255,0.4)');
+
+        var data = {
+            labels: ["07h", "08h", "09h", "10h", "11h", "12h", "13h", "14h", "15h", "16h"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: gradient ,
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [15, 20, 10, 18, 25, 60, 50, 70, 40, 28]
+                }]};
+
+        var myLineChart = new Chart(ctx).Line(data, null);
+
         /**
          * Once state loaded, get put map on scope.
          */
@@ -79,13 +126,32 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
                 'distance' : "6.5Km"
             };
 
+            console.log($(".circular-day"));
+
+            var cart_icon = {
+                    iconUrl: 'img/cart.png',
+                    iconSize:     [38, 38], // size of the icon
+                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [4, 62],  // the same for the shadow
+                    popupAnchor:  [0,0] // point from which the popup should open relative to the iconAnchor
+            };
+
+            var mainMarker = {
+                lat: $scope.commerce.latitude,
+                lng: $scope.commerce.longitude,
+                focus: true,
+                draggable: false
+            };
+
             $scope.map = {
                 defaults: {
                     tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                     maxZoom: 22,
                     zoomControlPosition: 'bottomleft'
                 },
-                markers: {},
+                markers: {
+                    mainMarker : angular.copy(mainMarker)
+                },
                 events: {
                     map: {
                         enable: ['context'],
@@ -95,7 +161,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             };
 
             $scope.map.center = {
-                lat: $scope.commerce.latitude,
+                lat: $scope.commerce.latitude-0.0004,
                 lng: $scope.commerce.longitude,
                 zoom: 18
             };

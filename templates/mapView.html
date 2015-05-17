@@ -27,7 +27,22 @@
 
         </div>
 
-        <leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map" height="0px" id="blurred" class="blurred-container"></leaflet>
-        <leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map" height="400px"></leaflet>
+        <div class="float-bottom menu-map text-center">
+            <div>
+                {{ actualMonth }}
+            </div>
+            <br/>
+            <div class="vertical-list">
+                            <button class="circular-day text-center" ng-repeat="day in days" ng-class="{active: $first}" id="daySelect{{day.number}}" ng-click="onDaySelectClick(day.number)">
+                                    {{ day.name | limitTo:1 }} <br/>
+                                    {{ day.number }}
+                        </button>
+        </div>
+            <div>
+                <canvas id="myChart" width="480px" height="240px"></canvas>
+            </div>
+            </div>
+
+        <leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map" height="720px"></leaflet>
     </ion-content>
 </ion-view>
