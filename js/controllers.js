@@ -38,11 +38,14 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
     })
 
     .controller('mapViewController', function($scope, $http, $stateParams){
+
+
         angular.extend($scope, {
             defaults: {
                 scrollWheelZoom: false
             }
         });
+
 
         console.log($("#menuMap").height());
         console.log($("#blurred"));
@@ -100,10 +103,21 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
 
         var myLineChart = new Chart(ctx).Line(data, null);
 
+
         /**
          * Once state loaded, get put map on scope.
          */
+        $scope.readyState = false;
+        $scope.readyJson = false;
         $scope.$on("$stateChangeSuccess", function() {
+            $scope.readyState = true;
+            $scope.loadMyMap();
+        });
+        $scope.loadMyMap = function() {
+
+            if(!$scope.readyState || !$scope.readyJson)
+                return;
+
             console.log("TAMER");
             /*$scope.commerce = {
                 'name': 'MachinTruc',
@@ -115,19 +129,6 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
                 'attente' : 10,
                 'distance' : "6.5Km"
             };*/
-
-            $http.get('data/data.json')
-                .success(function(data) {
-                    for(var it in data){
-                        if(data[it].idPlace == $stateParams.idPlace){
-                            $scope.commerce = data[it];
-                        }
-                    }
-                })
-                .error(function() {
-                    console.log('could not find someFile.json');
-                });
-
 
 
             var cart_icon = {
@@ -185,7 +186,24 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             svg.text($scope.commerce.distance).attr({x:xPointSVG,y:yPointSVG,fill:"black","text-anchor":"end"});
 
             menuMap.css("z-index","10");*/
-        });
+        }
+
+        $http.get('data/data.json')
+            .success(function(data) {
+                for(var it in data){
+                    if(data[it].idPlace == parseInt($stateParams.idPlace)){
+                        $scope.commerce = data[it];
+                        console.log("$scope.commerce");
+                        console.log($scope.commerce);
+                        $scope.readyJson = true;
+                        $scope.loadMyMap();
+                        break;
+                    }
+                }
+            })
+            .error(function() {
+                console.log('could not find someFile.json');
+            });
 
     })
 

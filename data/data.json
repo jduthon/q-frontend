@@ -24,7 +24,7 @@
     "route" : "mapView/2",
     "longitude" : 49.4194015,
     "latitude" : 2.8171433999999635,
-    "adresse" : ""
+    "adresse" : "26 Rue de Clermont"
   },
   {
     "idPlace" : 3,
@@ -37,9 +37,9 @@
     "creditsPlace" : 1,
     "hr" : false,
     "route" : "mapView/3",
-    "longitude" : 49.4194015,
-    "latitude" : 2.8171433999999635,
-    "adresse" : ""
+    "longitude" : 49.4234574,
+    "latitude" : 2.8211440999999695,
+    "adresse" : "38 Rue d'Amiens"
   },
   {
     "idPlace" : 4,
