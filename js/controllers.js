@@ -46,16 +46,7 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             }
         });
 
-
-        console.log($("#menuMap").height());
-        console.log($("#blurred"));
-        $("#blurred").height($("#menuMap").height());
-        $("#blurred").height(24);
-        console.log($("#blurred").height());
-
         $scope.mapHeight = $(document).height() - $("#navbar-map").height() - 10;
-        $scope.graphHeight = ($scope.mapHeight*30)/100;
-        $scope.graphWidth = ($(document).width()*70)/100;
 
         var today = new Date();
         var monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
@@ -66,11 +57,22 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
 
         $scope.days=[];
 
+        daysData = [
+            [15, 20, 10, 18, 25, 60, 50, 70, 40, 28],
+            [10, 5, 10, 22, 38, 80, 50, 70, 25, 10],
+            [4, 5, 4, 15, 27, 60, 60, 55, 10, 7],
+            [20, 23, 14, 10, 60, 70, 59, 64, 35, 28],
+            [8, 5, 4, 8, 45, 55, 50, 60, 55, 34],
+            [12, 5, 9, 18, 55, 80, 70, 67, 54, 35],
+            [10, 5, 10, 22, 38, 80, 50, 70, 25, 10]
+        ]
+
         var selected = today.getDate();
         for(var i=0;i<7;++i){
             $scope.days[i]= {
                 "name": dayNames[today.getDay()],
-                "number": today.getDate()
+                "number": today.getDate(),
+                "data": daysData[i]
             }
             today.setDate(today.getDate()+1);
         }
@@ -82,33 +84,6 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             $("#daySelect" + id).addClass("active")
         }
 
-        var myChart = $("#myChart");
-        myChart.height($scope.graphHeight);
-        myChart.width($scope.graphWidth);
-
-        var ctx = document.getElementById("myChart").getContext("2d");
-
-        var gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(255,226,161,1)');
-        gradient.addColorStop(1, 'rgba(255,255,255,0.4)');
-
-        var data = {
-            labels: ["07h", "08h", "09h", "10h", "11h", "12h", "13h", "14h", "15h", "16h"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: gradient ,
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [15, 20, 10, 18, 25, 60, 50, 70, 40, 28]
-                }]};
-
-        var myLineChart = new Chart(ctx).Line(data, null);
-
-
         /**
          * Once state loaded, get put map on scope.
          */
@@ -117,6 +92,8 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
         $scope.$on("$stateChangeSuccess", function() {
             $scope.readyState = true;
             $scope.loadMyMap();
+            console.log("Coucou");
+            $scope.loadChart();
         });
         $scope.loadMyMap = function() {
 
@@ -173,24 +150,36 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
                 lng: $scope.commerce.longitude,
                 zoom: 18
             };
+        }
 
+        $scope.loadChart = function(){
+            var myChart = $("#myChart");
+            myChart.height($scope.graphHeight);
+            myChart.width($scope.graphWidth);
 
+            var ctx = document.getElementById("myChart").getContext("2d");
 
-            /*
+            var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(255,226,161,1)');
+            gradient.addColorStop(1, 'rgba(255,255,255,0.4)');
 
-            var svg = SVG('menuMap').size($("body").width(),(20*$(document).height())/100);
-            svg.attr({fill : "white", 'fill-opacity': "0.5"});
-            var menuMap = $("#menuMap");
-            var yPointSVG = 10;
-            svg.text($scope.commerce.adresse + ",").attr({y : yPointSVG, x: 5,fill : "black"});
-            svg.text($scope.commerce.ville).attr({y: parseInt(yPointSVG) + 25, x: 5, fill: "black"});
-            var midPointSVG = menuMap.width()/2;
-            svg.text($scope.commerce.type).attr({y:yPointSVG,x:midPointSVG,fill:"black","text-anchor":"middle","font-weight":"bold"});
-            svg.text("Q " + $scope.commerce.attente + "'").attr({x:midPointSVG,y:parseInt(yPointSVG) + 25,fill:"black","text-anchor":"middle"});
-            var xPointSVG = menuMap.width() - 10;
-            svg.text($scope.commerce.distance).attr({x:xPointSVG,y:yPointSVG,fill:"black","text-anchor":"end"});
+            var data = {
+                labels: ["07h", "08h", "09h", "10h", "11h", "12h", "13h", "14h", "15h", "16h"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: gradient ,
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: $scope.days[0].data
+                    }]};
 
-            menuMap.css("z-index","10");*/
+            var myLineChart = new Chart(ctx).Line(data, null);
+            console.log("Chart load");
+
         }
 
         $http.get('data/data.json')
