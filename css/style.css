@@ -85,14 +85,14 @@ body,
 .grey-sm
 {
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !important;
-    font-weight:300 !important;
+    font-weight:normal !important;
     font-stretch:normal;
 }
 
 .white-medium-lg
 {
     font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !important;
-    font-weight:500 !important;
+    font-weight:bold !important;
     font-stretch:normal;
 }
 
@@ -100,7 +100,7 @@ body,
 .white-thin-lg
 {
     font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif !important;
-    font-weight:200 !important;
+    font-weight:lighter !important;
     font-stretch:normal;
 }
 
@@ -225,3 +225,17 @@ body,
     vertical-align: middle;
 }
 
+.search-icon {
+    width:20px;
+    height:20px;
+}
+
+.green{
+    background-color: #add99e !important;
+}
+.orange{
+    background-color: #ead792 !important;
+}
+.red{
+    background-color: #ecb09b !important;
+}
