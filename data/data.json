@@ -22,8 +22,8 @@
     "creditsPlace" : 5,
     "hr" : false,
     "route" : "mapView/2",
-    "longitude" : 49.4194015,
-    "latitude" : 2.8171433999999635,
+    "latitude" : 49.4194015,
+    "longitude" : 2.8171433999999635,
     "adresse" : "26 Rue de Clermont"
   },
   {
@@ -37,8 +37,8 @@
     "creditsPlace" : 1,
     "hr" : false,
     "route" : "mapView/3",
-    "longitude" : 49.4234574,
-    "latitude" : 2.8211440999999695,
+    "latitude" : 49.4234574,
+    "longitude" : 2.8211440999999695,
     "adresse" : "38 Rue d'Amiens"
   },
   {
@@ -52,8 +52,8 @@
     "creditsPlace" : 1,
     "hr" : false,
     "route" : "mapView/4",
-    "longitude" : 49.4194015,
-    "latitude" : 2.8171433999999635,
-    "adresse" : ""
+    "latitude" : 49.4203865,
+    "longitude" : 2.8258217999999715,
+    "adresse" : "25 Cours Guynemer"
   }
 ]
