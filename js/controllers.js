@@ -175,20 +175,24 @@ angular.module('starter.controllers', ['angularAwesomeSlider'])
             menuMap.css("z-index","10");*/
         });
 
-
-
-
     })
 
-    .controller('RateController', function($scope, $stateParams, $filter, $timeout) {
-        $scope.item = {
-            'id' : 1,
-            'icon' : '',
-            'name' : 'Four des remparts',
-            'queue' : 5,
-            'category' : 'Boulangerie',
-            'place' : 'Compiègne'
-        };
+    .controller('RateController', function($scope, $stateParams, $http, $filter, $timeout) {
+
+        $http.get('data/data.json')
+            .success(function(data) {
+                for(var it in data){
+                    if(data[it].idPlace == $stateParams.idPlace){
+                        delete data[it].distancePlace;
+                        $scope.item = data[it];
+                    }
+                }
+            })
+            .error(function() {
+                console.log('could not find someFile.json');
+            });
+
+
 
         $scope.show = false;
         $timeout(function() {
